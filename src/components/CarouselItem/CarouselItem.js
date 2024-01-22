@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import Fetch from './Fetch.js';
+import Fetch from '../Fetch';
 
-import './ContactsList.css';
+import '../ContactsList/ContactsList.css';
 
 const CarouselItem = ({ handleClick }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleForm = (event) => {
     event.preventDefault();
-    // You can perform additional actions if needed when the form is submitted
   };
 
   const handleChange = (event) => {

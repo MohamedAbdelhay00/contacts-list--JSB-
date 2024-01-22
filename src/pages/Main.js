@@ -1,5 +1,5 @@
 import './Main.css'
-import ContactsList from '../components/ContactsList.js'
+import ContactsList from '../components/ContactsList/ContactsList'
 
 const Main = () => {
     return(

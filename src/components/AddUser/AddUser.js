@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import "./AddUser.css";
-import Img from "../Ellipse 1.png";
+import "../AddUser/AddUser.css";
+import Img from "../../Ellipse 1.png";
 
 const AddUser = ({ handleCancel }) => {
   const [data, setData] = useState({
@@ -35,7 +35,6 @@ const AddUser = ({ handleCancel }) => {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
 
-      // Reset the form and show success message
       setData({
         firstName: "",
         lastName: "",
@@ -48,7 +47,7 @@ const AddUser = ({ handleCancel }) => {
 
       setTimeout(() => {
         setIsSuccess(false);
-      }, 3000); // Display success message for 3 seconds
+      }, 3000);
 
       const result = await res.json();
       console.log(result);

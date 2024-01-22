@@ -1,5 +1,5 @@
 import './User.css'
-import Img from '../Ellipse 1.png'
+import Img from '../../Ellipse 1.png'
 
 const User = (props) => {
 
@@ -28,9 +28,6 @@ const User = (props) => {
                     <button className='btn-2 border-0 mx-4 py-2 px-3 rounded'><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
-            {/* <div className="d-flex justify-content-center">
-                <hr class="hr-line border border-light border-2 opacity-75 " />
-              </div> */}
         </div>
     )
 }

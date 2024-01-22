@@ -18,7 +18,7 @@
     background-color: #F5F5F5;
 }
 
-.inFileds input::placeholder { /* Most modern browsers support this now. */
+.inFileds input::placeholder {
     color:    #000;
  }
 

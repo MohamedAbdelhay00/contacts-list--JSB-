@@ -1,9 +1,7 @@
-// Fetch.js
-
 import React, { useState, useEffect } from "react";
-import User from "./User.js";
+import User from "./User/User";
 
-import './ContactsList.css'
+import './ContactsList/ContactsList.css'
 
 const Fetch = ({ searchQuery }) => {
   const [users, setUsers] = useState([]);
@@ -12,14 +10,13 @@ const Fetch = ({ searchQuery }) => {
   useEffect(() => {
     fetch("https://dummyapi.io/data/v1/user", {
       headers: {
-        'app-id': '64fc4a747b1786417e354f31', // Replace with your actual app ID if required
+        'app-id': '64fc4a747b1786417e354f31',
       },
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
 
-        // Filter users based on the search query
         const filteredUsers = data.data.filter((user) =>
           user.firstName.toLowerCase().includes(searchQuery.toLowerCase())
         );
@@ -32,7 +29,6 @@ const Fetch = ({ searchQuery }) => {
   }, [searchQuery]);
 
   const handleSlideChange = (index) => {
-    // Ensure that the index stays within the valid range
     const newIndex = (index + users.length) % users.length;
     setActiveIndex(newIndex);
   };

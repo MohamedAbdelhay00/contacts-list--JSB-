@@ -1,8 +1,8 @@
 import {useState} from 'react';
 
 import "./ContactsList.css";
-import AddUser from './AddUser'
-import CarouselItem from './CarouselItem'
+import AddUser from '../AddUser/AddUser'
+import CarouselItem from '../CarouselItem/CarouselItem'
 
 const ContactsList = () => {
 
