@@ -1,0 +1,30 @@
+.opIocons .btn-1{
+    color: #1BB0F0;
+}
+
+.opIocons .btn-2{
+    color: #EC1B1B;
+}
+
+.userImg img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+@media only screen and (min-width: 301px) and (max-width: 768px) { 
+    .userInfo{
+        text-align: center;
+    }
+
+    .opIocons{
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    /* .user{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+ }

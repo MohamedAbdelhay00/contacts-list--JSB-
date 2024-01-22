@@ -1,0 +1,56 @@
+.addUser{
+    width: 80% !important;
+    height: 95vh;
+    border: 2px #fff solid;
+    margin: 10%;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.userImg img{
+    border: 2px #000 solid;
+    border-radius: 50%;
+    width: 10%;
+}
+
+.inFileds input{
+    border: none;
+    background-color: #F5F5F5;
+}
+
+.inFileds input::placeholder { /* Most modern browsers support this now. */
+    color:    #000;
+ }
+
+ .btns{
+    width: 94%;
+ }
+
+ .btns button{
+    padding: 1.5% 7%;
+    border: none;
+ }
+
+ .btns .btn-1{
+    
+ }
+
+ .btns .btn-2{
+    color: #fff;
+    background-color: #1BB0F0;
+ }
+
+ .success-message{
+    color: green;
+ }
+
+ @media only screen and (min-width: 301px) and (max-width: 768px) { 
+    .addUser{
+        width: 90% !important;
+        height: 120vh;
+        border: 2px #fff solid;
+        margin: 5%;
+        border-radius: 25px;
+        background-color: #fff;
+    }
+  }
