@@ -1,81 +1,62 @@
-import React, { useState } from 'react';
-
-import "../AddUser/AddUser.css";
+import React, { useState } from "react";
 import Img from "../../Ellipse 1.png";
 
+import './AddUser.css'
+
+import axios from "axios";
+
 const AddUser = ({ handleCancel }) => {
-  const [data, setData] = useState({
+  const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
-    phone: "",
-    email: "",
-    picture: "",
+    phone: "", 
+    email: "", 
+    picture: 'https://e7.pngegg.com/pngimages/136/22/png-clipart-user-profile-computer-icons-girl-customer-avatar-angle-heroes-thumbnail.png'
   });
 
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = async () => {
-    try {
-      const res = await fetch("https://dummyapi.io/data/v1/user/create", {
-        method: 'POST',
-        body: JSON.stringify({
-          firstName: data.firstName,
-          lastName: data.lastName,
-          phone: data.phone,
-          email: data.email,
-          picture: 'https://static.thenounproject.com/png/4035892-200.png'
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-          'app-id': '64fc4a747b1786417e354f31'
-        }
-      });
+  const handleChange = (e) => {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  };
 
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-
-      setData({
-        firstName: "",
-        lastName: "",
-        phone: "",
-        email: "",
-        picture: "",
-      });
-
-      setIsSuccess(true);
-
-      setTimeout(() => {
-        setIsSuccess(false);
-      }, 3000);
-
-      const result = await res.json();
-      console.log(result);
-    } catch (error) {
-      console.error('Error submitting data:', error);
+  const handleSubmit = (e) => {
+    // e.preventDefault();
+    if (userData.firstName && userData.lastName) {
+      axios
+        .post("https://dummyapi.io/data/v1/user/create", userData, {
+          headers: {
+            'app-id': '65b4bfe4b19b580537029cce',
+            'Content-Type': 'application/json',
+          },
+        })
+        .then((res) => {
+          setIsSuccess(true); 
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsSuccess(false);
+        });
+       
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  return (
-    <form className="addUser" onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-      <div className="userImg m-5 d-flex flex-column justify-content-center align-items-center ">
-        <img src={Img} alt='userImg'/>
-        <p className="m-3">Upload Photo</p>
-      </div>
-      <div className="inFileds container">
-        <div className="row m-4">
-          <div className="col-md-6 col-sm-12">
-            <input
+  return(
+    <div className="container">
+      <form action="true" className="addUser" onSubmit={handleSubmit}>
+       <div className="userImg m-5 d-flex flex-column justify-content-center align-items-center ">
+         <img src={Img} alt='userImg'/>
+         <p className="m-3">Upload Photo</p>
+       </div>
+       <div className="inFileds container">
+         <div className="row m-4">
+           <div className="col-md-6 col-sm-12">
+             <input
               type="text"
               className="w-100 my-3 p-3 rounded-5"
               placeholder="First Name"
               name="firstName"
-              value={data.firstName}
+              value={userData.firstName}
               onChange={handleChange}
               required
             />
@@ -86,7 +67,7 @@ const AddUser = ({ handleCancel }) => {
               className="w-100 my-3 p-3 rounded-5"
               placeholder="Last Name"
               name="lastName"
-              value={data.lastName}
+              value={userData.lastName}
               onChange={handleChange}
               required
             />
@@ -99,7 +80,7 @@ const AddUser = ({ handleCancel }) => {
               className="w-100 my-3 p-3 rounded-5"
               placeholder="Phone No."
               name="phone"
-              value={data.phone}
+              value={userData.phone}
               onChange={handleChange}
               required
             />
@@ -110,7 +91,7 @@ const AddUser = ({ handleCancel }) => {
               className="w-100 my-3 p-3 rounded-5"
               placeholder="Email"
               name="email"
-              value={data.email}
+              value={userData.email}
               onChange={handleChange}
               required
             />
@@ -121,14 +102,15 @@ const AddUser = ({ handleCancel }) => {
       {isSuccess && <span className="success-message text-center w-100">Contact Successfully Added</span>}
       </div>
       <div className="btns container d-flex justify-content-between mt-5">
+      <button type="submit" className="btn-2 rounded-5">
+          Save
+        </button>
         <button type="button" className="btn-1 rounded-5" onClick={handleCancel}>
           Cancel
         </button>
-        <button type="submit" className="btn-2 rounded-5">
-          Save
-        </button>
       </div>
     </form>
+    </div>
   );
 };
 

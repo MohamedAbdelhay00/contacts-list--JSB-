@@ -1,0 +1,21 @@
+.update{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.update button{
+    padding: 1.5% 7% !important;
+    border: none;
+    border-radius: 25px;
+}
+
+@media only screen and (min-width: 301px) and (max-width: 768px) {
+    .update button{
+        padding: 5% 22% !important;
+        border: none;
+        border-radius: 25px;
+    }
+ }

@@ -1,10 +1,15 @@
 .addUser{
     width: 80% !important;
-    height: 95vh;
+    min-height: 95vh;
     border: 2px #fff solid;
     margin: 10%;
     border-radius: 25px;
     background-color: #fff;
+    overflow: auto;
+    border: 2px #fff solid;
+    margin: 10%;
+    border-radius: 25px;
+    box-sizing: border-box;
 }
 
 .userImg img{
@@ -47,10 +52,19 @@
  @media only screen and (min-width: 301px) and (max-width: 768px) { 
     .addUser{
         width: 90% !important;
-        height: 110vh;
         border: 2px #fff solid;
         margin: 5%;
         border-radius: 25px;
         background-color: #fff;
+    }
+
+    .btns{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .btns button{
+      margin: 2% 0;
+      padding: 3% 0;
     }
   }

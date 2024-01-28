@@ -22,11 +22,11 @@ const ContactsList = () => {
     <div>
     {
         isShown ? <AddUser handleCancel={handleCancel}/> : 
-        <div id="carouselExample" class="carousels carousel container slide">
-        <div class="carousel-inner">
-        <div class="carousel-item active"><CarouselItem handleClick={handleClick}/></div>
-        <div class="carousel-item"><CarouselItem handleClick={handleClick}/></div>
-        <div class="carousel-item"><CarouselItem handleClick={handleClick}/></div>
+        <div id="carouselExample" className="carousels carousel container slide">
+        <div className="carousel-inner">
+        <div className="carousel-item active"><CarouselItem handleClick={handleClick}/></div>
+        <div className="carousel-item"><CarouselItem handleClick={handleClick}/></div>
+        <div className="carousel-item"><CarouselItem handleClick={handleClick}/></div>
         </div>
       </div>
     }

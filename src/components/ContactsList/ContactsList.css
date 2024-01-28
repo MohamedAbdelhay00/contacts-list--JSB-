@@ -1,9 +1,11 @@
 .carousels{
     width: 80% !important;
-    height: 95vh;
+    min-height: 95vh;
+    overflow: auto;
     border: 2px #fff solid;
     margin: 10%;
     border-radius: 25px;
+    box-sizing: border-box;
 }
 
 .carousel-inner{

@@ -12,6 +12,19 @@
     border-radius: 50%;
 }
 
+.b{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.b button{
+    padding: 1.5% 6.5% !important;
+    border: none;
+    border-radius: 25px;
+}
+
 @media only screen and (min-width: 301px) and (max-width: 768px) { 
     .userInfo{
         text-align: center;
@@ -22,4 +35,11 @@
         justify-content: center !important;
         align-items: center !important;
     }
+
+    .b button{
+        padding: 5% 20% !important;
+        border: none;
+        border-radius: 25px;
+    }
+
  }
